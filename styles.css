@@ -1,0 +1,107 @@
+/* Red borders on visible elements - handy for debugging */
+/* * { border: 1px solid red; } */
+
+:root {
+    --bg-color: #223030;
+    --text-color: #dddddd;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+
+    background-color: var(--bg-color);
+    background-size: cover;
+    color: var(--text-color);
+
+    font-family: 'Raleway', sans-serif;
+    font-size: 22px;
+
+    animation: fadein 1s;
+}
+
+#welcome-string {
+    height: 10vh;
+    padding-top: 10vh;
+    padding-bottom: 5vh;
+    text-align: center;
+    font-weight: 200;
+    font-size: 4rem;
+    margin-bottom: 0;
+}
+
+#search-bar {
+    background: url(https://camo.githubusercontent.com/ce783627cac13ab026860e2010ab4070171760e5/68747470733a2f2f6564656e742e6769746875622e696f2f537570657254696e7949636f6e732f696d616765732f7376672f676f6f676c652e737667);
+    background-color: white;
+    background-position: 3px 0px;
+    background-repeat: no-repeat;
+    display: block;
+    margin: auto;
+    padding-left: 30px;
+    width: 20%;
+    height: 20px;
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    border-radius: 50px;
+}
+
+#content {
+    height: 15vh;
+    text-align: center;
+    margin: auto;
+    padding: 2.5vh;
+}
+.group {
+    display: inline-block;
+    vertical-align: middle;
+    padding-left: 2vw;
+    padding-right: 2vw;
+    width: 15vh;
+}
+.group img {
+    height: 100%;
+}
+
+.slimScrollDiv {
+    margin: auto;
+    margin-top: 2.5vh;
+}
+.title {
+    font-size: 20px;
+    font-weight: 350;
+    margin-top: 5px;
+    margin-bottom: 0;
+}
+.summary {
+    font-size: 15px;
+    margin-top: 5px;
+    margin-bottom: 30px;
+    vertical-align: middle;
+}
+.feed_favicon {
+    height: 18px;
+    vertical-align: middle;
+}
+
+a, a:hover {
+    transition: all 0.4s ease;
+}
+a {
+    color: var(--text-color);
+    text-decoration: none;
+    opacity: 0.5;
+}
+a:hover {
+    opacity: 1;
+}
+
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+@keyframes pulse {
+    0% { opacity: 0; }
+    20% { opacity: 0.3; }
+    80% { opacity: 0.3; }
+    100%   { opacity: 0; }
+}
