@@ -22,7 +22,7 @@ const FEED_LIST = [
   "https://xkcd.com/rss.xml",
   "https://overreacted.io/rss.xml",
   "https://begriffs.com/atom.xml",
-  "https://dev.to/feed/tag/rust",
+  "https://dev.to/feed/tag/rust"
   // "https://dev.to/feed/tag/python",
 ];
 const MAX_FEED_NUM = 6;
@@ -135,8 +135,11 @@ async function feed_mix() {
   let feed_list = await Promise.all(
     promise_list.map(p => p.catch(error => null))
   );
+
+  // create object
   for (let i in feed_list) {
     let feed = feed_list[i];
+    let flist = [];
     if (feed == null) {
       continue;
     }
@@ -146,12 +149,30 @@ async function feed_mix() {
         entry.link,
         new Date(entry.date)
       );
-      mixed_feeds.push(feed_item);
+      flist.push(feed_item);
     }
+    feed_list[i] = flist;
   }
-  mixed_feeds.sort(function(a, b) {
-    return b.mseconds - a.mseconds;
-  });
+
+  // sort
+  for (let i in feed_list)
+    feed_list[i] = feed_list[i].sort((a, b) => b.mseconds - a.mseconds);
+
+  // interleave
+  let j = 0;
+  let did = false;
+  while (true) {
+    did = false;
+    for (let i in feed_list) {
+      if (feed_list[i].length > j) {
+        mixed_feeds.push(feed_list[i][j]);
+        did = true;
+      }
+    }
+    ++j;
+    if (!did) break;
+  }
+
   return mixed_feeds;
 }
 
