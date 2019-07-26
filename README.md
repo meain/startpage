@@ -1,6 +1,6 @@
 # Startpage
 
-![Screnshot](https://i.imgur.com/eby4THv.png)
+![Screnshot](https://i.imgur.com/nvFlunm.png)
 
 It's a startpage... with feeds!
 
