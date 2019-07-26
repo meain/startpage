@@ -17,13 +17,13 @@ const HOST_MAP = {
 };
 const FEED_LIST = [
   // "https://jeffknupp.com/atom.xml",
-  // "https://dev.to/feed/tag/python",
-  "https://dev.to/feed/tag/rust",
   // "https://feeds.fireside.fm/testandcode/rss",
   // "https://realpython.com/atom.xml?format=xml",
   "https://xkcd.com/rss.xml",
   "https://overreacted.io/rss.xml",
-  "https://begriffs.com/atom.xml"
+  "https://begriffs.com/atom.xml",
+  "https://dev.to/feed/tag/rust",
+  // "https://dev.to/feed/tag/python",
 ];
 const MAX_FEED_NUM = 6;
 
