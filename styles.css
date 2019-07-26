@@ -2,8 +2,8 @@
 /* * { border: 1px solid red; } */
 
 :root {
-  --bg-color: #223030;
-  --text-color: #dddddd;
+  --bg-color: #fff;
+  --text-color: #223030;
 }
 
 body {
@@ -35,7 +35,8 @@ body {
 #nowelcome-string {
   text-align: center;
   font-weight: 100;
-  color: #8e8e8e;
+  color: var(--text-color);
+  opacity: 0.5;
 }
 
 #content {
@@ -123,16 +124,27 @@ a:hover {
 
 .feed_item {
   padding: 5px 20px;
-  margin: 5px;
+  margin: 10px;
   border: 3px solid #8b8f87;
   border-radius: 5px;
+  background: white;
+}
+.feed_item:hover {
+  filter: invert(1);
+}
+.feed_item:hover a {
+  opacity: 1;
+}
+.feed_item:hover img {
+  filter: invert(1);
 }
 
 .feed_read {
   margin: 0;
   outline: none;
   background: transparent;
-  color: #515151;
+  color: var(--text-color);
+  opacity: 0.5;
   border: 0;
   text-align: right;
   width: 100%;
@@ -144,5 +156,5 @@ a:hover {
 }
 
 .feed_read:hover {
-  color: #8b8f87;
+  opacity: 1;
 }
