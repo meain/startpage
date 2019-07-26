@@ -106,6 +106,24 @@ a:hover {
 .feed_item {
   padding: 5px 20px;
   margin: 5px;
-  border: 3px solid #f6f6f6;
+  border: 3px solid #8b8f87;
   border-radius: 5px;
+}
+
+.feed_read {
+  margin: 0;
+  outline: none;
+  background: transparent;
+  color: #515151;
+  border: 0;
+  text-align: right; width: 100%;
+  text-transform: uppercase;
+  font-weight: 200;
+  font-family: "Code New Roman";
+  cursor: pointer;
+  transition: all 0.4s ease;
+}
+
+.feed_read:hover {
+  color: #8b8f87;
 }

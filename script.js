@@ -21,7 +21,7 @@ const FEED_LIST = [
   "https://dev.to/feed/tag/rust",
   "https://feeds.fireside.fm/testandcode/rss",
   "https://realpython.com/atom.xml?format=xml",
-  // "https://xkcd.com/rss.xml",
+  "https://xkcd.com/rss.xml",
   "https://overreacted.io/rss.xml",
   "https://begriffs.com/atom.xml"
 ];
@@ -39,6 +39,9 @@ const INSPIRATIONAL_QUOTES = [
   "Really???",
   "Oh, no. Not now."
 ];
+
+let articles = [];
+let read_articles = [];
 
 function setup_groups() {
   let $container = document.getElementById("content");
@@ -84,10 +87,13 @@ class FeedItem {
 function feed_add(title, description, url) {
   let feed = document.getElementById("feed_list");
 
+  let feed_wrapper = document.createElement("div");
+  feed_wrapper.setAttribute("class", "feed_item");
+  feed.appendChild(feed_wrapper);
+
   let link_elem = document.createElement("a");
   link_elem.setAttribute("href", url);
-  link_elem.setAttribute("class", "feed_item");
-  feed.appendChild(link_elem);
+  feed_wrapper.appendChild(link_elem);
 
   let title_elem = document.createElement("p");
   title_elem.setAttribute("class", "title");
@@ -109,6 +115,14 @@ function feed_add(title, description, url) {
   desc_elem.appendChild(url_favicon);
   desc_elem.innerHTML += " ";
   desc_elem.innerHTML += description;
+
+  let read_button = document.createElement("button");
+  read_button.setAttribute("class", "feed_read");
+  read_button.innerText = "Mark as read";
+  read_button.onclick = () => {
+    add_read_article(url);
+  };
+  feed_wrapper.appendChild(read_button);
 }
 
 async function feed_mix() {
@@ -126,7 +140,6 @@ async function feed_mix() {
     if (feed == null) {
       continue;
     }
-    // console.log(feed);
     for (let entry of feed.entries) {
       let feed_item = new FeedItem(
         entry.title,
@@ -142,12 +155,39 @@ async function feed_mix() {
   return mixed_feeds;
 }
 
+function filter_feed(list, fromLocalStorage) {
+  if (fromLocalStorage) {
+    let rf = localStorage.getItem("read");
+    if (rf == null) return list;
+    read_articles = JSON.parse(rf);
+  }
+  return list.filter(l => !read_articles.includes(l.link));
+}
+
+function add_read_article(article) {
+  if (!read_articles.includes(article)) {
+    read_articles.push(article);
+    feed_clean();
+    populate_feed(articles);
+    localStorage.setItem("read", JSON.stringify(read_articles));
+  }
+}
+
+function feed_clean() {
+  let feed = document.getElementById("feed_list");
+  feed.innerHTML = null;
+}
+
+function populate_feed(list, fromLocalStorage = false) {
+  for (let item of filter_feed(list, fromLocalStorage).slice(0, MAX_FEED_NUM)) {
+    feed_add(item.title, item.summary, item.link);
+  }
+}
+
 function setup_feed() {
   feed_mix().then(mixed_feeds => {
-    for (let i in mixed_feeds.slice(0, MAX_FEED_NUM)) {
-      let item = mixed_feeds[i];
-      feed_add(item.title, item.summary, item.link);
-    }
+    articles = mixed_feeds;
+    populate_feed(mixed_feeds, true);
   });
 }
 
@@ -156,7 +196,7 @@ function getTime() {
     min = date.getMinutes(),
     sec = date.getSeconds(),
     hour = date.getHours();
-    hour = hour > 12 ? hour - 12 : hour
+  hour = hour > 12 ? hour - 12 : hour;
   return (
     "" +
     (hour < 10 ? "0" + hour : hour) +
