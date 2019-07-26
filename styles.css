@@ -2,17 +2,17 @@
 /* * { border: 1px solid red; } */
 
 :root {
-  --bg-color: #fff;
-  --text-color: #223030;
+  --bg-color: 255, 255, 255;
+  --text-color: 33, 48, 48;
 }
 
 body {
   padding: 0;
   margin: 0;
 
-  background-color: var(--bg-color);
+  background-color: rgba(var(--bg-color), 1);
   background-size: cover;
-  color: var(--text-color);
+  color: rgba(var(--text-color), 1);
 
   font-family: "Code New Roman", sans-serif;
   font-size: 22px;
@@ -35,7 +35,7 @@ body {
 #nowelcome-string {
   text-align: center;
   font-weight: 100;
-  color: var(--text-color);
+  color: rgba(var(--text-color), 1);
   opacity: 0.5;
 }
 
@@ -79,7 +79,7 @@ a:hover {
   transition: all 0.4s ease;
 }
 a {
-  color: var(--text-color);
+  color: rgba(var(--text-color), 1);
   text-decoration: none;
   opacity: 0.5;
 }
@@ -125,9 +125,9 @@ a:hover {
 .feed_item {
   padding: 5px 20px;
   margin: 10px;
-  border: 3px solid #8b8f87;
+  border: 3px solid rgba(var(--text-color), 0.5);
   border-radius: 5px;
-  background: white;
+  background-color: rgba(var(--bg-color), 1);
 }
 .feed_item:hover {
   filter: invert(1);
@@ -143,7 +143,7 @@ a:hover {
   margin: 0;
   outline: none;
   background: transparent;
-  color: var(--text-color);
+  color: rgba(var(--text-color), 1);
   opacity: 0.5;
   border: 0;
   text-align: right;
