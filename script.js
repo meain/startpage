@@ -194,7 +194,7 @@ function getHours(date) {
 
 function setup_feed() {
   const lut = localStorage.getItem("lastArticlesUpdateTime");
-  if (lut == 'null') {
+  if (lut == "null") {
     localStorage.setItem("lastArticlesUpdateTime", +new Date());
     feed_mix().then(mixed_feeds => {
       articles = mixed_feeds;

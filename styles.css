@@ -103,6 +103,23 @@ a:hover {
   flex-wrap: wrap;
   padding: 50px;
 }
+@media only screen and (max-height: 800px) {
+  #feed_list {
+    height: 40vh;
+    overflow: hidden;
+  }
+}
+@media only screen and (max-width: 900px) {
+  #feed_list {
+    height: 40vh;
+    overflow: hidden;
+  }
+}
+@media only screen and (max-width: 600px) {
+  #feed_list {
+    overflow: scroll;
+  }
+}
 
 .feed_item {
   padding: 5px 20px;
@@ -117,7 +134,8 @@ a:hover {
   background: transparent;
   color: #515151;
   border: 0;
-  text-align: right; width: 100%;
+  text-align: right;
+  width: 100%;
   text-transform: uppercase;
   font-weight: 200;
   font-family: "Code New Roman";
