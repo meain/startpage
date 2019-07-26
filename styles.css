@@ -145,7 +145,7 @@ a:hover {
   outline: none;
   background: transparent;
   background-color: rgba(var(--bg-color), 1);
-  opacity: 0.5;
+  opacity: 0.3;
   border: 0;
   text-align: right;
   width: 100%;
