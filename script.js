@@ -21,7 +21,7 @@ const FEED_LIST = [
   "https://dev.to/feed/tag/rust",
   "https://feeds.fireside.fm/testandcode/rss",
   "https://realpython.com/atom.xml?format=xml",
-  "https://xkcd.com/rss.xml",
+  // "https://xkcd.com/rss.xml",
   "https://overreacted.io/rss.xml",
   "https://begriffs.com/atom.xml"
 ];
