@@ -156,6 +156,7 @@ function getTime() {
     min = date.getMinutes(),
     sec = date.getSeconds(),
     hour = date.getHours();
+    hour = hour > 12 ? hour - 12 : hour
   return (
     "" +
     (hour < 10 ? "0" + hour : hour) +
