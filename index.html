@@ -1,36 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!--Title of the page-->
     <title>Home</title>
+    <link rel="shortcut icon" type="image/png" href="assets/favicon.png" />
 
-    <!--Startpage icon - material house icon-->
-    <link rel="shortcut icon" type="image/png" href="assets/favicon.png">
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Raleway:200,400"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
 
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:200,400">
-    <link rel="stylesheet" href="styles.css">
-</head>
-
-<body>
-    <div>
-        <h1 id="welcome-string"></h1>
+  <body>
+    <div class="strings">
+      <h1 id="welcome-string"></h1>
+      <div id="nowelcome-string"></div>
     </div>
-    <input id="search-bar" type="text" autofocus placeholder="Search..." autocomplete="off">
-    <div id="content">
-        <!--Filled in by script.js-->
+    <div class="wrapper">
+      <div id="feed_list"></div>
+      <div id="content"></div>
     </div>
-    <div id="feed_list">
-        <!--Filled in by script.js-->
-    </div>
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
-    <script type="text/javascript" src="libs/jquery.slimscroll.min.js"></script>
     <script type="text/javascript" src="libs/feednami-client-v1.1.js"></script>
     <script type="text/javascript" src="script.js"></script>
-</body>
-
+  </body>
 </html>
