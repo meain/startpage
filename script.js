@@ -16,11 +16,11 @@ const HOST_MAP = {
   "begriffs.com": "Begriffs"
 };
 const FEED_LIST = [
-  "https://jeffknupp.com/atom.xml",
+  // "https://jeffknupp.com/atom.xml",
   // "https://dev.to/feed/tag/python",
   "https://dev.to/feed/tag/rust",
-  "https://feeds.fireside.fm/testandcode/rss",
-  "https://realpython.com/atom.xml?format=xml",
+  // "https://feeds.fireside.fm/testandcode/rss",
+  // "https://realpython.com/atom.xml?format=xml",
   "https://xkcd.com/rss.xml",
   "https://overreacted.io/rss.xml",
   "https://begriffs.com/atom.xml"
