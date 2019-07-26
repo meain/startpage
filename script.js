@@ -25,7 +25,7 @@ const FEED_LIST = [
   "https://overreacted.io/rss.xml",
   "https://begriffs.com/atom.xml"
 ];
-const MAX_FEED_NUM = 3;
+const MAX_FEED_NUM = 6;
 
 const INSPIRATIONAL_QUOTES = [
   "Is it really worth it?",
