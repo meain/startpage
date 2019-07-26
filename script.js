@@ -187,11 +187,34 @@ function populate_feed(list, fromLocalStorage = false) {
   }
 }
 
+function getHours(date) {
+  const diffTime = Math.abs(+new Date() - date);
+  return Math.ceil(diffTime / (1000 * 60 * 60));
+}
+
 function setup_feed() {
-  feed_mix().then(mixed_feeds => {
-    articles = mixed_feeds;
-    populate_feed(mixed_feeds, true);
-  });
+  const lut = localStorage.getItem("lastArticlesUpdateTime");
+  if (lut == 'null') {
+    localStorage.setItem("lastArticlesUpdateTime", +new Date());
+    feed_mix().then(mixed_feeds => {
+      articles = mixed_feeds;
+      populate_feed(mixed_feeds, true);
+      localStorage.setItem("articles", JSON.stringify(articles));
+    });
+  } else {
+    if (getHours(lut) > 12) {
+      localStorage.setItem("lastArticlesUpdateTime", +new Date());
+      feed_mix().then(mixed_feeds => {
+        articles = mixed_feeds;
+        populate_feed(mixed_feeds, true);
+        localStorage.setItem("articles", JSON.stringify(articles));
+      });
+    } else {
+      const cachedArticles = JSON.parse(localStorage.getItem("articles"));
+      articles = cachedArticles;
+      populate_feed(articles, true);
+    }
+  }
 }
 
 function getTime() {
