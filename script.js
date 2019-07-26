@@ -117,7 +117,7 @@ function feed_add(title, description, url) {
   desc_elem.innerHTML += description;
 
   let read_button = document.createElement("button");
-  read_button.setAttribute("class", "feed_read");
+  read_button.setAttribute("class", "button");
   read_button.innerText = "Mark as read";
   read_button.onclick = () => {
     add_read_article(url);
@@ -191,7 +191,6 @@ function add_read_article(article) {
     read_articles = read_articles.slice(
       Math.max(read_articles.length - 1000, 0)
     ); // have just last 200 items, might get huge
-    feed_clean();
     populate_feed(articles);
     localStorage.setItem("read", JSON.stringify(read_articles));
   }
@@ -203,6 +202,7 @@ function feed_clean() {
 }
 
 function populate_feed(list, fromLocalStorage = false) {
+  feed_clean();
   for (let item of filter_feed(list, fromLocalStorage).slice(0, MAX_FEED_NUM)) {
     feed_add(item.title, item.summary, item.link);
   }
@@ -213,11 +213,26 @@ function getHours(date) {
   return Math.ceil(diffTime / (1000 * 60 * 60));
 }
 
-function setup_feed() {
+function flashReloadButon() {
+  let reloadButton = document.getElementById("reload-button");
+  reloadButton.innerText = "Content reloaded";
+  // reloadButton.style.filter = "invert(1)";
+  setTimeout(() => {
+    reloadButton.innerText = "RELOAD";
+    // reloadButton.style.filter = "invert(0)";
+  }, 2000);
+}
+
+function setup_feed(ignoreCache = false) {
+  if (ignoreCache) {
+    let reloadButton = document.getElementById("reload-button");
+    reloadButton.innerText = "RELOADING";
+  }
   const lut = localStorage.getItem("lastArticlesUpdateTime");
-  if (lut == "null") {
+  if (lut == "null" || ignoreCache) {
     localStorage.setItem("lastArticlesUpdateTime", +new Date());
     feed_mix().then(mixed_feeds => {
+      flashReloadButon();
       articles = mixed_feeds;
       populate_feed(mixed_feeds, true);
       localStorage.setItem("articles", JSON.stringify(articles));
@@ -270,4 +285,10 @@ function main() {
   setup_feed();
 }
 
+function inject() {
+  let reloadButton = document.getElementById("reload-button");
+  reloadButton.onclick = () => setup_feed(true);
+}
+
 main();
+window.onload = inject;

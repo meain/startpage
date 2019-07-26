@@ -18,7 +18,6 @@ Pieced together from [GandaG/startpage](https://github.com/GandaG/startpage) and
 
 ### TODO
 
-- [ ] add option to reload blog list (invalidate article cache)
 - [ ] add option to toggle dark mode (save preference)
 - [ ] add option to show read blogs
 - [ ] add another button called `not my type` along with `mark read`
