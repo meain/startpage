@@ -2,6 +2,7 @@
 /* * { border: 1px solid red; } */
 
 :root {
+  /* reverse for dark mode */
   --bg-color: 255, 255, 255;
   --text-color: 33, 48, 48;
 }
