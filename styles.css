@@ -101,6 +101,7 @@ a:hover {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
+  padding: 50px;
 }
 
 .feed_item {
