@@ -4,7 +4,6 @@
 :root {
   --bg-color: #223030;
   --text-color: #dddddd;
-  overflow: hidden;
 }
 
 body {
@@ -40,7 +39,6 @@ body {
 }
 
 #content {
-  padding: 2.5vh;
   display: flex;
   justify-content: center;
   align-items: center;
