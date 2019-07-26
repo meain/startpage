@@ -78,6 +78,10 @@ class FeedItem {
     this.summary = hostname + " - ";
     if (elapsed == 0) {
       this.summary += "less than an hour ago";
+    } else if (elapsed > 24 * 30) {
+      this.summary += Math.round(elapsed / 24 / 30) + " months ago";
+    } else if (elapsed > 24) {
+      this.summary += Math.round(elapsed / 24) + " days ago";
     } else {
       this.summary += elapsed + " hours ago";
     }
