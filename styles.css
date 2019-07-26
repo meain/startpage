@@ -125,7 +125,7 @@ a:hover {
 .feed_item {
   padding: 5px 20px;
   margin: 10px;
-  border: 3px solid rgba(var(--text-color), 0.5);
+  border: 3px solid rgba(var(--text-color), 0.2);
   border-radius: 5px;
   background-color: rgba(var(--bg-color), 1);
 }
