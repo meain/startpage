@@ -3,8 +3,8 @@
 
 :root {
   /* reverse for dark mode */
-  --bg-color: 255, 255, 255;
-  --text-color: 33, 48, 48;
+  --text-color: 255, 255, 255;
+  --bg-color: 33, 48, 48;
 }
 
 body {
@@ -161,6 +161,7 @@ a:hover {
 }
 
 #reload-button {
+  color: rgba(var(--text-color), 1);
   background-color: rgba(var(--bg-color), 1);
   padding: 10px;
 }
