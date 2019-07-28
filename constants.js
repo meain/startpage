@@ -14,7 +14,7 @@ const HOST_MAP = {
   "realpython.com": "Real Python",
   "overreacted.io": "Overreacted",
   "begriffs.com": "Begriffs",
-  "feeds.feedburner.com": "Coding Horror",
+  "blog.codinghorror.com": "Coding Horror",
   "www.phpied.com": "Phiped",
 };
 const FEED_LIST = [
