@@ -1,3 +1,4 @@
+// Logos from https://www.vectorlogo.zone/
 const SHORTCUT_MAP = {
   "github.com":
     "https://meain.io/images/logos/github.svg",
