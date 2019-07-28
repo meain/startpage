@@ -16,6 +16,11 @@ It's a startpage... with feeds!
 Pieced together from [GandaG/startpage](https://github.com/GandaG/startpage) and [Jaredk3nt/homepage](https://github.com/Jaredk3nt/homepage).
 
 
+### Using
+
+Using it with Firefox was a bit of work, so I have a guide [here](https://meain.io/blog/2019/set-local-file-as-newtabpage-in-firefox/) to help you out.
+
+
 ### TODO
 
 - [ ] add option to toggle dark mode (save preference)
