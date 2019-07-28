@@ -1,10 +1,12 @@
 const SHORTCUT_MAP = {
   "github.com":
-    "https://camo.githubusercontent.com/d0518022b7a02d405ad5112a0c8aa455cbfe952e/68747470733a2f2f6564656e742e6769746875622e696f2f537570657254696e7949636f6e732f696d616765732f7376672f6769746875622e737667",
+    "https://meain.io/images/logos/github.svg",
   "www.reddit.com":
-    "https://camo.githubusercontent.com/2ed658492cb094825d26b06c1275a7e0414f32e4/68747470733a2f2f6564656e742e6769746875622e696f2f537570657254696e7949636f6e732f696d616765732f7376672f7265646469742e737667",
+    "http://meain.io/images/logos/reddit.svg",
   "www.youtube.com":
-    "https://camo.githubusercontent.com/0f31a4f7adb78461ca03dfaad4a138eedf0d14e0/68747470733a2f2f6564656e742e6769746875622e696f2f537570657254696e7949636f6e732f696d616765732f7376672f796f75747562652e737667"
+    "http://meain.io/images/logos/youtube.svg",
+  "https://news.ycombinator.com":
+    "http://meain.io/images/logos/ycombinator.svg"
 };
 const HOST_MAP = {
   "www.reddit.com": "Reddit",
@@ -15,7 +17,7 @@ const HOST_MAP = {
   "overreacted.io": "Overreacted",
   "begriffs.com": "Begriffs",
   "blog.codinghorror.com": "Coding Horror",
-  "www.phpied.com": "Phiped",
+  "www.phpied.com": "Phiped"
 };
 const FEED_LIST = [
   "https://xkcd.com/rss.xml",

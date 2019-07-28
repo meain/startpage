@@ -57,6 +57,8 @@ body {
 }
 .group img {
   height: 30px;
+  background-color: rgba(var(--bg-color), 1);
+  border-radius: 5px;
 }
 
 .title {
