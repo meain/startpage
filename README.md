@@ -19,3 +19,4 @@ To switch themes change swap `--text-color` and `--bg-color` in `style.css`.
 - [ ] add option to toggle dark mode (save preference)
 - [ ] add option to show read blogs
 - [ ] add another button called `not my type` along with `mark read`
+- [ ] let user add blog without having to editing the `constants.js` file
