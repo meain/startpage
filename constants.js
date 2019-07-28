@@ -13,13 +13,18 @@ const HOST_MAP = {
   "testandcode.com": "Test & Code",
   "realpython.com": "Real Python",
   "overreacted.io": "Overreacted",
-  "begriffs.com": "Begriffs"
+  "begriffs.com": "Begriffs",
+  "feeds.feedburner.com": "Coding Horror",
+  "www.phpied.com": "Phiped",
 };
 const FEED_LIST = [
   "https://xkcd.com/rss.xml",
   "https://overreacted.io/rss.xml",
   "https://begriffs.com/atom.xml",
-  "https://dev.to/feed/tag/rust"
+  "https://dev.to/feed/tag/rust",
+  "http://www.phpied.com/feed/",
+  "http://feeds.feedburner.com/codinghorror?format=xml"
+
   // "https://dev.to/feed/tag/python",
 ];
 const MAX_FEED_NUM = 6;
