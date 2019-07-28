@@ -109,17 +109,20 @@ a:hover {
   #feed_list {
     height: 40vh;
     overflow: hidden;
+    padding: 30px;
   }
 }
 @media only screen and (max-width: 900px) {
   #feed_list {
     height: 40vh;
     overflow: hidden;
+    padding: 30px;
   }
 }
 @media only screen and (max-width: 600px) {
   #feed_list {
-    overflow: scroll;
+    overflow: auto;
+    padding: 30px;
   }
 }
 
