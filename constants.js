@@ -38,7 +38,7 @@ const INSPIRATIONAL_QUOTES = [
   "Do you really wanna do it?",
   "Why not push it for later?",
   "Nah, not now.",
-  "Really? Are you gonna go ahed with it?",
+  "Really? Are you gonna go ahead with it?",
   "Maybe not now.",
   "This was not how it was supposed to be.",
   "Really???",
