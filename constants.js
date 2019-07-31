@@ -1,13 +1,13 @@
 // Logos from https://www.vectorlogo.zone/
 const SHORTCUT_MAP = {
   "github.com":
-    "https://meain.io/images/logos/github.svg",
+    "assets/github.svg",
   "www.reddit.com":
-    "http://meain.io/images/logos/reddit.svg",
+    "assets/reddit.svg",
   "www.youtube.com":
-    "http://meain.io/images/logos/youtube.svg",
+    "assets/youtube.svg",
   "https://news.ycombinator.com":
-    "http://meain.io/images/logos/ycombinator.svg"
+    "assets/ycombinator.svg"
 };
 const HOST_MAP = {
   "www.reddit.com": "Reddit",
