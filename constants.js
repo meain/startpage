@@ -6,7 +6,7 @@ const SHORTCUT_MAP = {
     "assets/reddit.svg",
   "www.youtube.com":
     "assets/youtube.svg",
-  "https://news.ycombinator.com":
+  "news.ycombinator.com":
     "assets/ycombinator.svg"
 };
 const HOST_MAP = {
