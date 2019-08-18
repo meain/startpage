@@ -19,7 +19,8 @@ const HOST_MAP = {
   "begriffs.com": "Begriffs",
   "blog.codinghorror.com": "Coding Horror",
   "www.phpied.com": "Phiped",
-  "www.smbc-comics.com": "Smbc Comics"
+  "www.smbc-comics.com": "Smbc Comics",
+  "jameshfisher.com": "Jim Fisher"
 };
 const FEED_LIST = [
   "https://xkcd.com/rss.xml",
@@ -28,7 +29,8 @@ const FEED_LIST = [
   "https://dev.to/feed/tag/rust",
   "http://www.phpied.com/feed/",
   "http://feeds.feedburner.com/codinghorror?format=xml",
-  "https://www.smbc-comics.com/comic/rss"
+  "https://www.smbc-comics.com/comic/rss",
+  "https://jameshfisher.com/feed.xml"
   // "https://dev.to/feed/tag/python",
 ];
 const MAX_FEED_NUM = 6;
