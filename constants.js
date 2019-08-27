@@ -1,13 +1,9 @@
 // Logos from https://www.vectorlogo.zone/
 const SHORTCUT_MAP = {
-  "github.com":
-    "assets/github.svg",
-  "www.reddit.com":
-    "assets/reddit.svg",
-  "www.youtube.com":
-    "assets/youtube.svg",
-  "news.ycombinator.com":
-    "assets/ycombinator.svg"
+  "github.com": "assets/github.svg",
+  "www.reddit.com": "assets/reddit.svg",
+  "www.youtube.com": "assets/youtube.svg",
+  "news.ycombinator.com": "assets/ycombinator.svg"
 };
 const HOST_MAP = {
   "www.reddit.com": "Reddit",
@@ -20,7 +16,8 @@ const HOST_MAP = {
   "blog.codinghorror.com": "Coding Horror",
   "www.phpied.com": "Phiped",
   "www.smbc-comics.com": "Smbc Comics",
-  "jameshfisher.com": "Jim Fisher"
+  "jameshfisher.com": "Jim Fisher",
+  "www.brianstorti.com": "Brian Storti"
 };
 const FEED_LIST = [
   "https://xkcd.com/rss.xml",
@@ -30,7 +27,8 @@ const FEED_LIST = [
   "http://www.phpied.com/feed/",
   "http://feeds.feedburner.com/codinghorror?format=xml",
   "https://www.smbc-comics.com/comic/rss",
-  "https://jameshfisher.com/feed.xml"
+  "https://jameshfisher.com/feed.xml",
+  "https://www.brianstorti.com/feed/atom.xml"
   // "https://dev.to/feed/tag/python",
 ];
 const MAX_FEED_NUM = 6;
