@@ -189,17 +189,16 @@ function setup_feed(ignoreCache = false) {
       localStorage.setItem("articles", JSON.stringify(articles));
     });
   } else {
+    const cachedArticles = JSON.parse(localStorage.getItem("articles"));
+    articles = cachedArticles;
+    populate_feed(articles, true);
     if (getHours(lut) > 12) {
-      localStorage.setItem("lastArticlesUpdateTime", +new Date());
       feed_mix().then(mixed_feeds => {
+        localStorage.setItem("lastArticlesUpdateTime", +new Date());
         articles = mixed_feeds;
         populate_feed(mixed_feeds, true);
         localStorage.setItem("articles", JSON.stringify(articles));
       });
-    } else {
-      const cachedArticles = JSON.parse(localStorage.getItem("articles"));
-      articles = cachedArticles;
-      populate_feed(articles, true);
     }
   }
 }
