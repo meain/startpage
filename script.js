@@ -102,6 +102,7 @@ async function feed_mix() {
       continue;
     }
     for (let entry of feed.entries) {
+      if (!entry.title || !entry.link || !entry.date) continue
       let feed_item = new FeedItem(
         entry.title,
         entry.link,
