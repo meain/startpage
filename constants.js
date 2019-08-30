@@ -17,7 +17,8 @@ const HOST_MAP = {
   "www.phpied.com": "Phiped",
   "www.smbc-comics.com": "Smbc Comics",
   "jameshfisher.com": "Jim Fisher",
-  "www.brianstorti.com": "Brian Storti"
+  "www.brianstorti.com": "Brian Storti",
+  "lukesmith.xyz": "Luke Smith"
 };
 const FEED_LIST = [
   "https://xkcd.com/rss.xml",
@@ -28,7 +29,8 @@ const FEED_LIST = [
   "http://feeds.feedburner.com/codinghorror?format=xml",
   "https://www.smbc-comics.com/comic/rss",
   "https://jameshfisher.com/feed.xml",
-  "https://www.brianstorti.com/feed/atom.xml"
+  "https://www.brianstorti.com/feed/atom.xml",
+  "https://lukesmith.xyz/rss.xml"
   // "https://dev.to/feed/tag/python",
 ];
 const MAX_FEED_NUM = 6;
