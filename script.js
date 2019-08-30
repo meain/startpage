@@ -22,12 +22,12 @@ function setup_groups() {
 }
 
 class FeedItem {
-  constructor(title, link, date) {
+  constructor(title, link, date, feed_title) {
     this.title = title;
     this.link = link;
     this.mseconds = date.getTime();
 
-    let hostname = HOST_MAP[get_hostname(link)];
+    let hostname = feed_title;
     let elapsed = Math.trunc((Date.now() - this.mseconds) / 1000 / 60 / 60);
     this.summary = hostname + " - ";
     if (elapsed == 0) {
@@ -86,27 +86,29 @@ function feed_add(title, description, url) {
 async function feed_mix() {
   let mixed_feeds = [];
   let promise_list = [];
-  for (let i in FEED_LIST) {
-    let feed_url = FEED_LIST[i];
+
+  for (let feed_url of Object.keys(FEED_LIST))
     promise_list.push(feednami.load(feed_url));
-  }
+
   let feed_list = await Promise.all(
     promise_list.map(p => p.catch(error => null))
   );
 
   // create object
   for (let i in feed_list) {
-    let feed = feed_list[i];
+    const feed = feed_list[i]
+    const feed_title = Object.values(FEED_LIST)[i]
+
+    if (feed == null) continue;
     let flist = [];
-    if (feed == null) {
-      continue;
-    }
+
     for (let entry of feed.entries) {
-      if (!entry.title || !entry.link || !entry.date) continue
+      if (!entry.title || !entry.link || !entry.date) continue;
       let feed_item = new FeedItem(
         entry.title,
         entry.link,
-        new Date(entry.date)
+        new Date(entry.date),
+        feed_title
       );
       flist.push(feed_item);
     }

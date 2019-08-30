@@ -5,32 +5,21 @@ const SHORTCUT_MAP = {
   "www.youtube.com": "assets/youtube.svg",
   "news.ycombinator.com": "assets/ycombinator.svg"
 };
-const HOST_MAP = {
-  "begriffs.com": "Begriffs",
-  "blog.codinghorror.com": "Coding Horror",
-  "dev.to": "Dev.to",
-  "jameshfisher.com": "Jim Fisher",
-  "lukesmith.xyz": "Luke Smith",
-  "overreacted.io": "Overreacted",
-  "realpython.com": "Real Python",
-  "testandcode.com": "Test & Code",
-  "www.brianstorti.com": "Brian Storti",
-  "www.phpied.com": "Phiped",
-  "www.smbc-comics.com": "Smbc Comics",
-  "xkcd.com": "xkcd"
+
+const FEED_LIST = {
+  "https://xkcd.com/rss.xml": "xkcd",
+  "https://www.smbc-comics.com/comic/rss": "Smbc Comics",
+  "https://lukesmith.xyz/rss.xml": "Luke Smith",
+  "https://overreacted.io/rss.xml": "Overreacted",
+  "https://jameshfisher.com/feed.xml": "James Fisher",
+  "https://www.brianstorti.com/feed/atom.xml": "Brian Storti",
+  "https://begriffs.com/atom.xml": "Begriffs",
+  "http://www.phpied.com/feed/": "Phiped",
+  "http://feeds.feedburner.com/codinghorror?format=xml": "Coding Horror",
+  "https://dev.to/feed/tag/rust": "Rust",
+  "https://www.youtube.com/feeds/videos.xml?channel_id=UC2eYFnH61tmytImy1mTYvhA": "Luke Smith"
 };
-const FEED_LIST = [
-  "https://xkcd.com/rss.xml",
-  "https://www.smbc-comics.com/comic/rss",
-  "https://lukesmith.xyz/rss.xml",
-  "https://overreacted.io/rss.xml",
-  "https://jameshfisher.com/feed.xml",
-  "https://www.brianstorti.com/feed/atom.xml",
-  "https://begriffs.com/atom.xml",
-  "http://www.phpied.com/feed/",
-  "http://feeds.feedburner.com/codinghorror?format=xml",
-  "https://dev.to/feed/tag/rust"
-];
+
 const MAX_FEED_NUM = 6;
 
 const INSPIRATIONAL_QUOTES = [
