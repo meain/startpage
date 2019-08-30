@@ -6,32 +6,30 @@ const SHORTCUT_MAP = {
   "news.ycombinator.com": "assets/ycombinator.svg"
 };
 const HOST_MAP = {
-  "www.reddit.com": "Reddit",
-  "dev.to": "Dev.to",
-  "xkcd.com": "xkcd",
-  "testandcode.com": "Test & Code",
-  "realpython.com": "Real Python",
-  "overreacted.io": "Overreacted",
   "begriffs.com": "Begriffs",
   "blog.codinghorror.com": "Coding Horror",
+  "dev.to": "Dev.to",
+  "jameshfisher.com": "Jim Fisher",
+  "lukesmith.xyz": "Luke Smith",
+  "overreacted.io": "Overreacted",
+  "realpython.com": "Real Python",
+  "testandcode.com": "Test & Code",
+  "www.brianstorti.com": "Brian Storti",
   "www.phpied.com": "Phiped",
   "www.smbc-comics.com": "Smbc Comics",
-  "jameshfisher.com": "Jim Fisher",
-  "www.brianstorti.com": "Brian Storti",
-  "lukesmith.xyz": "Luke Smith"
+  "xkcd.com": "xkcd"
 };
 const FEED_LIST = [
   "https://xkcd.com/rss.xml",
-  "https://overreacted.io/rss.xml",
-  "https://begriffs.com/atom.xml",
-  "https://dev.to/feed/tag/rust",
-  "http://www.phpied.com/feed/",
-  "http://feeds.feedburner.com/codinghorror?format=xml",
   "https://www.smbc-comics.com/comic/rss",
+  "https://lukesmith.xyz/rss.xml",
+  "https://overreacted.io/rss.xml",
   "https://jameshfisher.com/feed.xml",
   "https://www.brianstorti.com/feed/atom.xml",
-  "https://lukesmith.xyz/rss.xml"
-  // "https://dev.to/feed/tag/python",
+  "https://begriffs.com/atom.xml",
+  "http://www.phpied.com/feed/",
+  "http://feeds.feedburner.com/codinghorror?format=xml",
+  "https://dev.to/feed/tag/rust"
 ];
 const MAX_FEED_NUM = 6;
 
