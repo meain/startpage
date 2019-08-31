@@ -96,8 +96,8 @@ async function feed_mix() {
 
   // create object
   for (let i in feed_list) {
-    const feed = feed_list[i]
-    const feed_title = Object.values(FEED_LIST)[i]
+    const feed = feed_list[i];
+    const feed_title = Object.values(FEED_LIST)[i];
 
     if (feed == null) continue;
     let flist = [];
@@ -194,7 +194,7 @@ function setup_feed(ignoreCache = false) {
   } else {
     const cachedArticles = JSON.parse(localStorage.getItem("articles"));
     articles = cachedArticles;
-    populate_feed(articles, true);
+    if (articles) populate_feed(articles, true);
     if (getHours(lut) > 12) {
       feed_mix().then(mixed_feeds => {
         localStorage.setItem("lastArticlesUpdateTime", +new Date());

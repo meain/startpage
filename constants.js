@@ -17,7 +17,8 @@ const FEED_LIST = {
   "http://www.phpied.com/feed/": "Phiped",
   "http://feeds.feedburner.com/codinghorror?format=xml": "Coding Horror",
   "https://dev.to/feed/tag/rust": "Rust",
-  "https://www.youtube.com/feeds/videos.xml?channel_id=UC2eYFnH61tmytImy1mTYvhA": "Luke Smith"
+  "https://www.youtube.com/feeds/videos.xml?channel_id=UC2eYFnH61tmytImy1mTYvhA": "Luke Smith",
+  "https://www.youtube.com/feeds/videos.xml?channel_id=UCmtyQOKKmrMVaKuRXz02jbQ": "Sebastian Lague"
 };
 
 const MAX_FEED_NUM = 6;
