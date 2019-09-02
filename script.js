@@ -117,7 +117,10 @@ async function feed_mix() {
 
   // sort
   for (let i in feed_list)
-    feed_list[i] = feed_list[i].sort((a, b) => b.mseconds - a.mseconds);
+    feed_list[i] = filter_feed(
+      feed_list[i].sort((a, b) => b.mseconds - a.mseconds),
+      true
+    );
 
   // interleave
   let j = 0;
