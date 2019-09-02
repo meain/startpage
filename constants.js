@@ -12,6 +12,7 @@ const FEED_LIST = {
   "https://lukesmith.xyz/rss.xml": "Luke Smith",
   "https://overreacted.io/rss.xml": "Overreacted",
   "https://jameshfisher.com/feed.xml": "James Fisher",
+  "https://w0rp.com/blog/latest/feed/": "w0rp",
   "https://www.brianstorti.com/feed/atom.xml": "Brian Storti",
   "https://begriffs.com/atom.xml": "Begriffs",
   "http://www.phpied.com/feed/": "Phiped",
