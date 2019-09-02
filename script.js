@@ -152,9 +152,10 @@ function filter_feed(list, fromLocalStorage) {
 function add_read_article(article) {
   if (!read_articles.includes(article)) {
     read_articles.push(article);
+    console.log("read_articles.length:", read_articles.length)
     read_articles = read_articles.slice(
-      Math.max(read_articles.length - 1000, 0)
-    ); // have just last 200 items, might get huge
+      Math.max(read_articles.length - 3000, 0)
+    );
     populate_feed(articles);
     localStorage.setItem("read", JSON.stringify(read_articles));
   }
