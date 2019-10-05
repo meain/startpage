@@ -152,7 +152,7 @@ function filter_feed(list, fromLocalStorage) {
 function add_read_article(article) {
   if (!read_articles.includes(article)) {
     read_articles.push(article);
-    console.log("read_articles.length:", read_articles.length)
+    console.log("read_articles.length:", read_articles.length);
     read_articles = read_articles.slice(
       Math.max(read_articles.length - 3000, 0)
     );
@@ -199,7 +199,7 @@ function setup_feed(ignoreCache = false) {
     const cachedArticles = JSON.parse(localStorage.getItem("articles"));
     articles = cachedArticles;
     if (articles) populate_feed(articles, true);
-    if (getHours(lut) > 12) {
+    if (getHours(lut) > 48) {
       feed_mix().then(mixed_feeds => {
         localStorage.setItem("lastArticlesUpdateTime", +new Date());
         articles = mixed_feeds;
@@ -214,10 +214,6 @@ function fill_message() {
   setInterval(() => {
     document.getElementById("welcome-string").innerText = getTime();
   }, 100);
-  document.getElementById("nowelcome-string").innerText =
-    INSPIRATIONAL_QUOTES[
-      Math.floor(Math.random() * INSPIRATIONAL_QUOTES.length)
-    ];
 }
 
 function main() {
