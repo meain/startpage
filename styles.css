@@ -15,7 +15,7 @@ body {
   background-size: cover;
   color: rgba(var(--text-color), 1);
 
-  font-family: "Operator Mono", sans-serif;
+  font-family: "Consolas";
   font-size: 22px;
 
   animation: fadein 1s;
@@ -156,7 +156,7 @@ a:hover {
   width: 100%;
   text-transform: uppercase;
   font-weight: 200;
-  font-family: "Operator Mono", sans-serif;
+  font-family: "Consolas";
   cursor: pointer;
   transition: all 0.4s ease;
 }

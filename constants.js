@@ -10,8 +10,10 @@ const FEED_LIST = {
   "https://xkcd.com/rss.xml": "xkcd",
   "https://www.smbc-comics.com/comic/rss": "Smbc Comics",
   "https://lukesmith.xyz/rss.xml": "Luke Smith",
+  "https://addy-dclxvi.github.io/index.xml": "Andy's Blog",
   "https://overreacted.io/rss.xml": "Overreacted",
   "https://jameshfisher.com/feed.xml": "James Fisher",
+  "https://jdhao.github.io/index.xml": "Jdhao's Blog",
   "https://w0rp.com/blog/latest/feed/": "w0rp",
   "https://noahfrederick.com/feed.xml": "Noah Fredrick",
   "https://eli.thegreenplace.net/feeds/all.atom.xml": "The Green Place",
@@ -26,16 +28,3 @@ const FEED_LIST = {
 };
 
 const MAX_FEED_NUM = 6;
-
-const INSPIRATIONAL_QUOTES = [
-  "Is it really worth it?",
-  "Are you really sure?",
-  "Do you really wanna do it?",
-  "Why not push it for later?",
-  "Nah, not now.",
-  "Really? Are you gonna go ahead with it?",
-  "Maybe not now.",
-  "This was not how it was supposed to be.",
-  "Really???",
-  "Oh, no. Not now."
-];
