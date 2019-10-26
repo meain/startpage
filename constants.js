@@ -7,8 +7,6 @@ const SHORTCUT_MAP = {
 };
 
 const FEED_LIST = {
-  "https://xkcd.com/rss.xml": "xkcd",
-  "https://www.smbc-comics.com/comic/rss": "Smbc Comics",
   "https://lukesmith.xyz/rss.xml": "Luke Smith",
   "https://addy-dclxvi.github.io/index.xml": "Andy's Blog",
   "https://overreacted.io/rss.xml": "Overreacted",
