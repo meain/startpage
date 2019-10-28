@@ -7,8 +7,6 @@ const SHORTCUT_MAP = {
 };
 
 const FEED_LIST = {
-  "https://lukesmith.xyz/rss.xml": "Luke Smith",
-  "https://addy-dclxvi.github.io/index.xml": "Andy's Blog",
   "https://overreacted.io/rss.xml": "Overreacted",
   "https://jameshfisher.com/feed.xml": "James Fisher",
   "https://jdhao.github.io/index.xml": "Jdhao's Blog",
@@ -20,6 +18,8 @@ const FEED_LIST = {
   "https://begriffs.com/atom.xml": "Begriffs",
   "http://www.phpied.com/feed/": "Phiped",
   "http://feeds.feedburner.com/codinghorror?format=xml": "Coding Horror",
+  "https://lukesmith.xyz/rss.xml": "Luke Smith",
+  "https://addy-dclxvi.github.io/index.xml": "Andy's Blog",
   "https://dev.to/feed/tag/rust": "Rust",
   "https://www.youtube.com/feeds/videos.xml?channel_id=UC2eYFnH61tmytImy1mTYvhA": "Luke Smith",
   "https://www.youtube.com/feeds/videos.xml?channel_id=UCmtyQOKKmrMVaKuRXz02jbQ": "Sebastian Lague"
