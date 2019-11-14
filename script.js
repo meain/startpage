@@ -15,9 +15,11 @@ function setup_groups() {
     link.setAttribute("href", "https://" + key);
     group.appendChild(link);
 
-    let image = document.createElement("img");
+    let image = document.createElement("span");
     image.setAttribute("src", value);
-    link.appendChild(image);
+
+    const linkText = document.createTextNode(value);
+    link.appendChild(linkText);
   }
 }
 

@@ -1,8 +1,9 @@
 // Logos from https://www.vectorlogo.zone/
 const SHORTCUT_MAP = {
-  "github.com": "assets/github.svg",
-  "www.reddit.com": "assets/reddit.svg",
-  "news.ycombinator.com": "assets/ycombinator.svg"
+  "github.com": "github",
+  "www.reddit.com": "reddit",
+  "news.ycombinator.com": "hackernews",
+  "dev.to": "dev"
 };
 
 const FEED_LIST = {
@@ -20,8 +21,10 @@ const FEED_LIST = {
   "https://lukesmith.xyz/rss.xml": "Luke Smith",
   "https://addy-dclxvi.github.io/index.xml": "Andy's Blog",
   "https://dev.to/feed/tag/rust": "Rust",
-  "https://www.youtube.com/feeds/videos.xml?channel_id=UC2eYFnH61tmytImy1mTYvhA": "Luke Smith",
-  "https://www.youtube.com/feeds/videos.xml?channel_id=UCmtyQOKKmrMVaKuRXz02jbQ": "Sebastian Lague"
+  "https://www.youtube.com/feeds/videos.xml?channel_id=UC2eYFnH61tmytImy1mTYvhA":
+    "Luke Smith",
+  "https://www.youtube.com/feeds/videos.xml?channel_id=UCmtyQOKKmrMVaKuRXz02jbQ":
+    "Sebastian Lague"
 };
 
 const MAX_FEED_NUM = 6;
