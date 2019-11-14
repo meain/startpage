@@ -2,7 +2,6 @@
 const SHORTCUT_MAP = {
   "github.com": "assets/github.svg",
   "www.reddit.com": "assets/reddit.svg",
-  "www.youtube.com": "assets/youtube.svg",
   "news.ycombinator.com": "assets/ycombinator.svg"
 };
 
