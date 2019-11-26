@@ -20,7 +20,6 @@ const FEED_LIST = {
   "http://feeds.feedburner.com/codinghorror?format=xml": "Coding Horror",
   "https://lukesmith.xyz/rss.xml": "Luke Smith",
   "https://addy-dclxvi.github.io/index.xml": "Andy's Blog",
-  "https://dev.to/feed/tag/rust": "Rust",
   "https://www.youtube.com/feeds/videos.xml?channel_id=UC2eYFnH61tmytImy1mTYvhA":
     "Luke Smith",
   "https://www.youtube.com/feeds/videos.xml?channel_id=UCmtyQOKKmrMVaKuRXz02jbQ":

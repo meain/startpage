@@ -24,10 +24,11 @@ function setup_groups() {
 }
 
 class FeedItem {
-  constructor(title, link, date, feed_title) {
+  constructor(title, link, date, feed_title, read_time) {
     this.title = title;
     this.link = link;
     this.mseconds = date.getTime();
+    this.read_time = read_time;
 
     let hostname = feed_title;
     let elapsed = Math.trunc((Date.now() - this.mseconds) / 1000 / 60 / 60);
@@ -44,7 +45,7 @@ class FeedItem {
   }
 }
 
-function feed_add(title, description, url) {
+function feed_add(title, description, url, read_time) {
   let feed = document.getElementById("feed_list");
 
   let feed_wrapper = document.createElement("div");
@@ -72,6 +73,14 @@ function feed_add(title, description, url) {
   );
   url_favicon.setAttribute("class", "feed_favicon");
 
+  let bottom_bar = document.createElement("div");
+  bottom_bar.setAttribute("class", "bottom-bar");
+
+  let read_time_elem = document.createElement("p");
+  read_time_elem.setAttribute("class", "bottom");
+  read_time_elem.innerHTML = read_time;
+  bottom_bar.appendChild(read_time_elem);
+
   desc_elem.appendChild(url_favicon);
   desc_elem.innerHTML += " ";
   desc_elem.innerHTML += description;
@@ -82,7 +91,8 @@ function feed_add(title, description, url) {
   read_button.onclick = () => {
     add_read_article(url);
   };
-  feed_wrapper.appendChild(read_button);
+  bottom_bar.appendChild(read_button);
+  feed_wrapper.appendChild(bottom_bar);
 }
 
 async function feed_mix() {
@@ -106,11 +116,16 @@ async function feed_mix() {
 
     for (let entry of feed.entries) {
       if (!entry.title || !entry.link || !entry.date) continue;
+      let read_time = "-";
+      if (entry.description && entry.description !== null)
+        read_time =
+          Math.ceil(entry.description.split(" ").length / 200) + " minutes";
       let feed_item = new FeedItem(
         entry.title,
         entry.link,
         new Date(entry.date),
-        feed_title
+        feed_title,
+        read_time
       );
       flist.push(feed_item);
     }
@@ -171,7 +186,7 @@ function feed_clean() {
 function populate_feed(list, fromLocalStorage = false) {
   feed_clean();
   for (let item of filter_feed(list, fromLocalStorage).slice(0, MAX_FEED_NUM)) {
-    feed_add(item.title, item.summary, item.link);
+    feed_add(item.title, item.summary, item.link, item.read_time);
   }
 }
 
