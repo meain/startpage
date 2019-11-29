@@ -5,6 +5,7 @@
   /* reverse for dark mode */
   --bg-color: 255, 255, 255;
   --text-color: 33, 48, 48;
+  --font-family: "Consolas";
 }
 
 body {
@@ -15,7 +16,7 @@ body {
   background-size: cover;
   color: rgba(var(--text-color), 1);
 
-  font-family: "Consolas";
+  font-family: var(--font-family);
   font-size: 22px;
 
   animation: fadein 1s;
@@ -156,7 +157,7 @@ a:hover {
   width: 100%;
   text-transform: uppercase;
   font-weight: 200;
-  font-family: "Consolas";
+  font-family: var(--font-family);
   cursor: pointer;
   transition: all 0.4s ease;
 }
@@ -185,7 +186,7 @@ p.bottom {
   text-align: left;
   width: 100%;
   font-weight: 200;
-  font-family: "Consolas";
+  font-family: var(--font-family);
   cursor: pointer;
   transition: all 0.4s ease;
   font-size: 0.9rem;
