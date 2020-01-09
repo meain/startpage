@@ -10,7 +10,10 @@ Pieced together from [GandaG/startpage](https://github.com/GandaG/startpage) and
 
 ### Usage
 
-Using it with Firefox was a bit of work, so I have a guide [here](https://meain.io/blog/2019/set-local-file-as-newtabpage-in-firefox/) to help you out.
+- run `make build`
+- import `build.zip` as a plugin in Firefox
+
+*You used to be able to just pass the filename in `userChrome.js`, but firefox changed that behaviour in 72*
 
 To switch themes change swap `--text-color` and `--bg-color` in `style.css`.
 
