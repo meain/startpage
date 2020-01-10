@@ -132,29 +132,12 @@ async function feed_mix() {
     feed_list[i] = flist;
   }
 
-  // sort
-  for (let i in feed_list)
-    feed_list[i] = filter_feed(
-      feed_list[i].sort((a, b) => b.mseconds - a.mseconds),
-      true
-    );
+  // mix
+  let combined_feeds = [];
+  for (let feed of feed_list) combined_feeds = [...combined_feeds, ...feed];
+  feed_list = filter_feed(combined_feeds.sort((a, b) => b.mseconds - a.mseconds), true)
 
-  // interleave
-  let j = 0;
-  let did = false;
-  while (true) {
-    did = false;
-    for (let i in feed_list) {
-      if (feed_list[i].length > j) {
-        mixed_feeds.push(feed_list[i][j]);
-        did = true;
-      }
-    }
-    ++j;
-    if (!did) break;
-  }
-
-  return mixed_feeds;
+  return feed_list;
 }
 
 function filter_feed(list, fromLocalStorage) {

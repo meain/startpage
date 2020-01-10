@@ -22,8 +22,6 @@ const FEED_LIST = {
   "https://addy-dclxvi.github.io/index.xml": "Andy's Blog",
   "https://www.youtube.com/feeds/videos.xml?channel_id=UC2eYFnH61tmytImy1mTYvhA":
     "Luke Smith",
-  "https://www.youtube.com/feeds/videos.xml?channel_id=UCmtyQOKKmrMVaKuRXz02jbQ":
-    "Sebastian Lague"
 };
 
 const MAX_FEED_NUM = 6;
