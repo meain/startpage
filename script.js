@@ -139,6 +139,21 @@ async function feed_mix() {
       true
     );
 
+  // interleave
+  let j = 0;
+  let did = false;
+  while (true) {
+    did = false;
+    for (let i in feed_list) {
+      if (feed_list[i].length > j) {
+        mixed_feeds.push(feed_list[i][j]);
+        did = true;
+      }
+    }
+    ++j;
+    if (!did) break;
+  }
+
   return mixed_feeds;
 }
 
