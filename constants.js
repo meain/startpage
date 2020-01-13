@@ -9,7 +9,6 @@ const SHORTCUT_MAP = {
 const FEED_LIST = {
   "https://overreacted.io/rss.xml": "Overreacted",
   "https://jameshfisher.com/feed.xml": "James Fisher",
-  "https://jdhao.github.io/index.xml": "Jdhao's Blog",
   "https://w0rp.com/blog/latest/feed/": "w0rp",
   "https://noahfrederick.com/feed.xml": "Noah Fredrick",
   "https://eli.thegreenplace.net/feeds/all.atom.xml": "The Green Place",
@@ -20,8 +19,6 @@ const FEED_LIST = {
   "http://feeds.feedburner.com/codinghorror?format=xml": "Coding Horror",
   "https://lukesmith.xyz/rss.xml": "Luke Smith",
   "https://addy-dclxvi.github.io/index.xml": "Andy's Blog",
-  "https://www.youtube.com/feeds/videos.xml?channel_id=UC2eYFnH61tmytImy1mTYvhA":
-    "Luke Smith",
 };
 
 const MAX_FEED_NUM = 6;
