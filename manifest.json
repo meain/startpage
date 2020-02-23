@@ -5,8 +5,8 @@
 	"manifest_version": 2,
 	"description": "Simple clean newtab page with feeds",
 	"icons": {
-		 "48": "icon_48.png",
-		 "16": "icon_16.png"
+		 "48": "icons/icon_48.png",
+		 "16": "icons/icon_16.png"
 	},
 	"permissions": ["tabs"],
 	"chrome_url_overrides":
