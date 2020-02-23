@@ -146,6 +146,10 @@ a:hover {
   filter: invert(1);
 }
 
+.buttons {
+  display: flex;
+  justify-content: space-between;
+}
 .button {
   margin: 0;
   outline: none;
@@ -153,13 +157,12 @@ a:hover {
   background-color: rgba(var(--bg-color), 1);
   opacity: 0.3;
   border: 0;
-  text-align: right;
-  width: 100%;
   text-transform: uppercase;
   font-weight: 200;
   font-family: var(--font-family);
   cursor: pointer;
   transition: all 0.4s ease;
+  white-space: nowrap;
 }
 
 .button:hover {
@@ -172,7 +175,7 @@ a:hover {
   padding: 10px;
 }
 
-.bottom-bar{
+.bottom-bar {
   display: flex;
 }
 
@@ -190,4 +193,57 @@ p.bottom {
   cursor: pointer;
   transition: all 0.4s ease;
   font-size: 0.9rem;
+}
+
+.modal-wrapper {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(244, 244, 244, 0.7);
+  z-index: 10;
+  width: 100vw;
+  height: 100vh;
+  left: 0;
+  top: 0;
+}
+
+.modal {
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 0px 2px rgba(0, 0, 0, 0.24);
+  padding: 40px 20px;
+}
+
+.modal textarea {
+  width: 500px;
+  height: 100px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-family: var(--font-family);
+  font-size: 15px;
+  padding: 10px;
+  background-color: #f5f5f5;
+}
+
+.modal h5 {
+  margin-bottom: 0;
+}
+
+.done-button {
+  margin-top: 25px;
+  padding: 10px 20px;
+  border: none;
+  width: 100%;
+  box-sizing: border-box;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.done-button:hover {
+  background-color: #bbdaff;
+}
+
+.modal-wrapper {
+  display: none;
 }

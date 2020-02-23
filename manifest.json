@@ -5,7 +5,6 @@
 	"manifest_version": 2,
 	"description": "Simple clean newtab page with feeds",
 	"icons": {
-		"128": "icon_128.png",
 		 "48": "icon_48.png",
 		 "16": "icon_16.png"
 	},

@@ -1,18 +1,26 @@
 let articles = [];
 let read_articles = [];
 
+let max_feed_num = localStorage.getItem("max_feeds");
+if (max_feed_num === null) max_feed_num = MAX_FEED_DEFAULT;
+
 function setup_groups() {
   let $container = document.getElementById("content");
 
-  for (var key in SHORTCUT_MAP) {
-    let value = SHORTCUT_MAP[key];
+
+  let shorcuts = localStorage.getItem("shortcuts");
+  if (shorcuts === null) shorcuts = DEFAULT_SHORTCUTS;
+  else shorcuts = JSON.parse(shorcuts);
+
+  for (let shorcut of shorcuts) {
+    let value = shorcut[1];
 
     let group = document.createElement("div");
     group.className = "group";
     $container.appendChild(group);
 
     let link = document.createElement("a");
-    link.setAttribute("href", "https://" + key);
+    link.setAttribute("href", "https://" + shorcut[0]);
     group.appendChild(link);
 
     let image = document.createElement("span");
@@ -99,17 +107,21 @@ async function feed_mix() {
   let mixed_feeds = [];
   let promise_list = [];
 
-  for (let feed_url of Object.keys(FEED_LIST))
-    promise_list.push(feednami.load(feed_url));
+  let feeds = localStorage.getItem("feeds");
+  if (feeds === null) feeds = DEFAULT_FEEDS;
+  else feeds = JSON.parse(feeds);
+
+  for (let feed of feeds)
+    promise_list.push(feednami.load(feed[0]));
 
   let feed_list = await Promise.all(
     promise_list.map(p => p.catch(error => null))
   );
 
   // create object
-  for (let i in feed_list) {
-    const feed = feed_list[i];
-    const feed_title = Object.values(FEED_LIST)[i];
+  for (let f in feeds) {
+    const feed = feed_list[f];
+    const feed_title = feeds[f][1];
 
     if (feed == null) continue;
     let flist = [];
@@ -129,7 +141,7 @@ async function feed_mix() {
       );
       flist.push(feed_item);
     }
-    feed_list[i] = flist;
+    feed_list[f] = flist;
   }
 
   // mix
@@ -168,7 +180,7 @@ function feed_clean() {
 
 function populate_feed(list, fromLocalStorage = false) {
   feed_clean();
-  for (let item of filter_feed(list, fromLocalStorage).slice(0, MAX_FEED_NUM)) {
+  for (let item of filter_feed(list, fromLocalStorage).slice(0, max_feed_num)) {
     feed_add(item.title, item.summary, item.link, item.read_time);
   }
 }
