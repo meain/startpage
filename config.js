@@ -64,6 +64,3 @@ config_button.onclick = () => {
 done_button.onclick = () => {
   modal_wrapper.style.display = "none";
 };
-modal_wrapper.onclick = () => {
-  modal_wrapper.style.display = "none";
-};
