@@ -8,6 +8,8 @@ It's a startpage... with favs and feeds!
 
 Pieced together from [GandaG/startpage](https://github.com/GandaG/startpage) and [Jaredk3nt/homepage](https://github.com/Jaredk3nt/homepage).
 
+> **Config on top left**
+
 ### Usage
 
 - run `make build`
@@ -17,9 +19,10 @@ Pieced together from [GandaG/startpage](https://github.com/GandaG/startpage) and
 
 To switch themes change swap `--text-color` and `--bg-color` in `style.css`.
 
+
 ### TODO
 
 - [ ] add option to toggle dark mode (save preference)
 - [ ] add option to show read blogs
 - [ ] add another button called `not my type` along with `mark read`
-- [ ] let user add blog without having to editing the `constants.js` file
+- [x] let user add blog without having to editing the `constants.js` file
