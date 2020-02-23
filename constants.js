@@ -12,8 +12,7 @@ const DEFAULT_FEEDS = [
   ["https://www.brianstorti.com/feed/atom.xml", "Brian Storti"],
   ["https://begriffs.com/atom.xml", "Begriffs"],
   ["https://www.phpied.com/feed/", "Phiped"],
-  ["https://addy-dclxvi.github.io/index.xml", "Andy's Blog"],
-  ["https://fasterthanli.me/index.xml", "Amos"]
+  ["https://blog.meain.io/feed.xml", "meain"]
 ];
 
 const MAX_FEED_DEFAULT = 6;
