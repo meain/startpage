@@ -14,7 +14,6 @@
 		"newtab": "newtab.html"
 	},
 	"background" : {
-		"scripts" : ["background.js"],
 		"persistent" : true
 	}
 }
