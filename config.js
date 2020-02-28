@@ -1,15 +1,38 @@
 const sh_el = document.getElementById("modal-shortcuts");
 const fl_el = document.getElementById("modal-feeds");
 const mx_fl_el = document.getElementById("modal-max-feeds");
+const mx_font = document.getElementById("modal-font");
+const mx_dark = document.getElementById("modal-dark-mode");
 
-let mf = localStorage.getItem("max_feeds");
-if (mf === null) mf = MAX_FEED_DEFAULT;
-console.log("mf:", mf);
-mx_fl_el.value = mf;
+function config_value(item, element, defaultValue) {
+  let val = localStorage.getItem(item);
+  if (val === null) val = defaultValue;
+  // else val = JSON.parse(val);
 
-mx_fl_el.onchange = () => {
-  localStorage.setItem("max_feeds", mx_fl_el.value);
-};
+  element.value = val;
+  element.onchange = () => {
+    let vc = element.value;
+    if (item === "dark-mode") vc = element.checked;
+    localStorage.setItem(item, vc);
+  };
+}
+
+config_value("max_feeds", mx_fl_el, MAX_FEED_DEFAULT);
+config_value("font-family", mx_font, "consolas");
+config_value("dark-mode", mx_dark, false);
+
+var html = document.getElementsByTagName("html")[0];
+console.log(
+  "localStorage.getItem(dark-mode):",
+  localStorage.getItem("dark-mode")
+);
+if (localStorage.getItem("dark-mode") === "true") {
+  html.style.setProperty("--bg-color", "33, 33, 33");
+  html.style.setProperty("--text-color", "255, 255, 255");
+}
+if (localStorage.getItem("font-family")) {
+  html.style.setProperty("--font-family", localStorage.getItem("font-family"));
+}
 
 function update_store(store, text_data) {
   const parsed = [];

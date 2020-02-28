@@ -1,7 +1,7 @@
 /* Red borders on visible elements - handy for debugging */
 /* * { border: 1px solid red; } */
 
-:root {
+html {
   /* reverse for dark mode */
   --bg-color: 255, 255, 255;
   --text-color: 33, 48, 48;
@@ -155,6 +155,7 @@ a:hover {
   outline: none;
   background: transparent;
   background-color: rgba(var(--bg-color), 1);
+  color: rgba(var(--text-color), 0.7);
   opacity: 0.3;
   border: 0;
   text-transform: uppercase;
@@ -200,7 +201,7 @@ p.bottom {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgba(244, 244, 244, 0.7);
+  background-color: rgba(var(--bg-color), 0.7);
   z-index: 10;
   width: 100vw;
   height: 100vh;
@@ -209,7 +210,7 @@ p.bottom {
 }
 
 .modal {
-  background-color: white;
+  background-color: rgba(var(--bg-color), 1);
   border-radius: 5px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 0px 2px rgba(0, 0, 0, 0.24);
   padding: 40px 20px;
@@ -242,6 +243,10 @@ p.bottom {
 
 .done-button:hover {
   background-color: #bbdaff;
+}
+
+.input-label {
+  font-size: 1rem;
 }
 
 .modal-wrapper {
