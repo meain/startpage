@@ -12,6 +12,12 @@ Pieced together from [GandaG/startpage](https://github.com/GandaG/startpage) and
 
 ### Usage
 
+#### From addon store
+
+[Firefox](https://addons.mozilla.org/en-US/firefox/addon/meain-quicktab/)
+
+
+### On your own
 - run `make build`
 - import `build.zip` as a plugin in Firefox
 
