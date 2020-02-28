@@ -1,7 +1,7 @@
 {
 	"name": "QuickTab",
 	"short_name": "QT",
-	"version": "0.3",
+	"version": "0.4",
 	"manifest_version": 2,
 	"description": "Simple clean newtab page with feeds",
 	"icons": {
