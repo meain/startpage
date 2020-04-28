@@ -22,10 +22,6 @@ config_value("font-family", mx_font, "consolas");
 config_value("dark-mode", mx_dark, false);
 
 var html = document.getElementsByTagName("html")[0];
-console.log(
-  "localStorage.getItem(dark-mode):",
-  localStorage.getItem("dark-mode")
-);
 if (localStorage.getItem("dark-mode") === "true") {
   html.style.setProperty("--bg-color", "33, 33, 33");
   html.style.setProperty("--text-color", "255, 255, 255");
@@ -54,7 +50,6 @@ function render_editor(data, store) {
   ta.addEventListener(
     "input",
     function() {
-      console.log(ta.value);
       update_store(store, ta.value);
     },
     false

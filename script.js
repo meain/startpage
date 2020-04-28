@@ -7,7 +7,6 @@ if (max_feed_num === null) max_feed_num = MAX_FEED_DEFAULT;
 function setup_groups() {
   let $container = document.getElementById("content");
 
-
   let shorcuts = localStorage.getItem("shortcuts");
   if (shorcuts === null) shorcuts = DEFAULT_SHORTCUTS;
   else shorcuts = JSON.parse(shorcuts);
@@ -35,13 +34,18 @@ class FeedItem {
   constructor(title, link, date, feed_title, read_time) {
     this.title = title;
     this.link = link;
-    this.mseconds = date.getTime();
+    this.mseconds = date !== null ? date.getTime() : null;
     this.read_time = read_time;
 
     let hostname = feed_title;
-    let elapsed = Math.trunc((Date.now() - this.mseconds) / 1000 / 60 / 60);
+    let elapsed =
+      date !== null
+        ? Math.trunc((Date.now() - date.getTime()) / 1000 / 60 / 60)
+        : null;
     this.summary = hostname + " - ";
-    if (elapsed == 0) {
+    if (elapsed === null) {
+      this.summary = "unknown";
+    } else if (elapsed == 0) {
       this.summary += "less than an hour ago";
     } else if (elapsed > 24 * 30) {
       this.summary += Math.round(elapsed / 24 / 30) + " months ago";
@@ -111,8 +115,7 @@ async function feed_mix() {
   if (feeds === null) feeds = DEFAULT_FEEDS;
   else feeds = JSON.parse(feeds);
 
-  for (let feed of feeds)
-    promise_list.push(feednami.load(feed[0]));
+  for (let feed of feeds) promise_list.push(feednami.load(feed[0]));
 
   let feed_list = await Promise.all(
     promise_list.map(p => p.catch(error => null))
@@ -127,7 +130,7 @@ async function feed_mix() {
     let flist = [];
 
     for (let entry of feed.entries) {
-      if (!entry.title || !entry.link || !entry.date) continue;
+      if (!entry.title || !entry.link) continue;
       let read_time = "-";
       if (entry.description && entry.description !== null)
         read_time =
@@ -135,7 +138,7 @@ async function feed_mix() {
       let feed_item = new FeedItem(
         entry.title,
         entry.link,
-        new Date(entry.date),
+        new Date(entry.date ? entry.date : null),
         feed_title,
         read_time
       );
@@ -147,7 +150,20 @@ async function feed_mix() {
   // mix
   let combined_feeds = [];
   for (let feed of feed_list) combined_feeds = [...combined_feeds, ...feed];
-  feed_list = filter_feed(combined_feeds.sort((a, b) => b.mseconds - a.mseconds), true)
+  feed_list = filter_feed(
+    combined_feeds.sort((a, b) => {
+      if (a.mseconds !== null && b.mseconds !== null) {
+        return b.mseconds - a.mseconds;
+      } else if (a.mseconds === null) {
+        return 1;
+      } else if (b.mseconds === null) {
+        return -1;
+      } else {
+        return 0;
+      }
+    }),
+    true
+  );
 
   return feed_list;
 }
@@ -164,7 +180,6 @@ function filter_feed(list, fromLocalStorage) {
 function add_read_article(article) {
   if (!read_articles.includes(article)) {
     read_articles.push(article);
-    console.log("read_articles.length:", read_articles.length);
     read_articles = read_articles.slice(
       Math.max(read_articles.length - 3000, 0)
     );
