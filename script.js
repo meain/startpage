@@ -44,7 +44,7 @@ class FeedItem {
         : null;
     this.summary = hostname + " - ";
     if (elapsed === null) {
-      this.summary = "unknown";
+      this.summary += "unknown";
     } else if (elapsed == 0) {
       this.summary += "less than an hour ago";
     } else if (elapsed > 24 * 30) {
@@ -138,7 +138,7 @@ async function feed_mix() {
       let feed_item = new FeedItem(
         entry.title,
         entry.link,
-        new Date(entry.date ? entry.date : null),
+        entry.date !== null ? new Date(entry.date) : null,
         feed_title,
         read_time
       );
