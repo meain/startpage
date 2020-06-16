@@ -7,9 +7,9 @@ const DEFAULT_SHORTCUTS = [
 ];
 
 const DEFAULT_FEEDS = [
-  ["https://meain.io/feed.xml", "meain"]
+  ["https://meain.io/feed.xml", "meain"],
   ["https://overreacted.io/rss.xml", "Overreacted"],
-  ["https://hacks.mozilla.org/feed/", "MozillaHacks"],
+  ["https://hacks.mozilla.org/feed", "MozillaHacks"],
   ["https://blog.rust-lang.org/feed.xml", "Rustlang"]
 ];
 
